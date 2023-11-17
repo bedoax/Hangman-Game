@@ -1,0 +1,256 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700;1,800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #5b66b5;
+  }
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.hangmanStyle {
+min-height: 180px;
+  flex: 1;
+ 
+}
+
+.ground {
+  display: none;
+  width: 150px;
+  height: 10px;
+  background: black;
+  position: relative;
+  top: 180px;
+  left: 10px;
+  border-radius: 4px;
+}
+.pole {
+  display: none;
+  width: 16px;
+  height: 150px;
+  position: relative;
+  background: black;
+  top: 25px;
+  left: 20px;
+  border-radius: 4px;
+}
+.ref {
+  display: none;
+  width: 80px;
+  background: black;
+  height: 10px;
+  position: relative;
+  top: -125px;
+  left: 20px;
+  border-radius: 4px;
+}
+
+.ref::after {
+
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  transform: rotate(90deg);
+  background: black;
+  left: 55px;
+  top: 21px;
+  border-radius: 4px;
+}
+
+.head {
+  display: none;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  position: relative;
+  top: -92px;
+  left: 80px;
+}
+
+.body {
+  display: none;
+  width: 10px;
+  background: black;
+  height: 50px;
+  position: relative;
+  top: -94px;
+  left: 90px;
+  border-radius: 4px;
+}
+
+.right-hand {
+  display: none;
+  width: 30px;
+  /* border-top: 2px solid black; */
+  background: black;
+  height: 7px;
+  position: relative;
+  top: -130px;
+  left: 91px;
+  transform: rotate(45deg);
+  border-radius: 4px;
+}
+
+.left-hand {
+  display: none;
+  width: 30px;
+  /* border-top: 2px solid black; */
+  background: black;
+  height: 7px;
+  position: relative;
+  top: -137px;
+  left: 91px;
+  left: 68px;
+  transform: rotate(-45deg);
+  border-radius: 4px;
+}
+
+.right-leg {
+  display: none;
+  width: 30px;
+  /* border-top: 2px solid black; */
+  background: black;
+  height: 7px;
+  position: relative;
+  top: -105px;
+  left: 91px;
+  transform: rotate(45deg);
+  border-radius: 4px;
+}
+.left-leg {
+  display: none;
+  width: 30px;
+  height: 7px;
+  background: black;
+  position: relative;
+  top: -112px;
+  border-radius: 4px;
+  left: 68px;
+  transform: rotate(-45deg);
+}
+.hangmanLetter {
+  flex: 1;
+}
+.letters{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px 20px;
+}
+li{
+  width: 40px;
+  height: 2px;
+  margin: 2px;
+  border: 1px solid black;
+}
+.activeLi{
+  border: none;
+  position: relative;
+  top: -12px;
+  left: 12px;
+  font-size: 20px;
+}
+h3{
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+.hints{
+  text-align: center;
+}
+.hintBtn{
+  max-width: 90px;
+  width: 90px;
+}
+.hint{
+  text-transform: capitalize;
+}
+.keyboards{
+  max-width: 300px;
+  margin: 20px auto auto auto;
+  text-align: center;
+}
+button{
+  text-transform: capitalize;
+  border-radius: 2px;
+  border: none;
+  padding: 4px 10px;
+  max-width: 50px;
+  margin: 3px 1px;
+  background-color: #5b66b5;
+  color: white;
+  cursor: pointer;
+}
+button.active{
+  background-color: #5b66b54a;
+
+}
+.counter{
+  color:red;
+}
+.messagePopUp{
+  display: none;
+  position: relative;
+  z-index: 99;
+  background-color: #5b66b5;
+  width: 240px;
+  height: 120px;
+  border-radius: 4px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.3s;
+}
+p{
+  color: white;
+  font-size: 20px;
+  text-transform: capitalize;
+  text-align: center;
+}
+.restart{
+  max-width: 120px;
+  background-color: white;
+  color:#5b66b5;
+}
+@media (width>=950px){
+.container{
+  width: 65%;
+  height: 50vh;
+  background-color: white !important;
+  margin: auto;
+}
+}
+@media (width<950px) {
+  body{
+    background-color: white !important;
+  }
+  .container{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100svh;
+    
+    
+  }
+  .hangmanStyle{
+    flex: 0;
+  }
+  .hangmanLetter{
+    flex: 0;
+  }
+  li{
+    width: 50%;
+    max-width: 100%;
+  }
+}
